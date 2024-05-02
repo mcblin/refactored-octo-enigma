@@ -1,43 +1,6 @@
 <?php
 session_start();
 
-// Подключите библиотеку PHPSpreadsheet
-require 'vendor/autoload.php';
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-
-// Функция для экспорта базы данных в XLS
-function exportDBToXLS($mysqli) {
-    // Создаем новый Spreadsheet
-    $spreadsheet = new Spreadsheet();
-    $sheet = $spreadsheet->getActiveSheet();
-
-    // Запрос к базе данных
-    $result = $mysqli->query("SELECT * FROM your_table");
-
-    // Задаем заголовки
-    $fields = $result->fetch_fields();
-    foreach ($fields as $i => $field) {
-        $sheet->setCellValueByColumnAndRow($i + 1, 1, $field->name);
-    }
-
-    // Заполняем данные
-    $row = 2;
-    while ($data = $result->fetch_assoc()) {
-        $col = 1;
-        foreach ($data as $value) {
-            $sheet->setCellValueByColumnAndRow($col, $row, $value);
-            $col++;
-        }
-        $row++;
-    }
-
-    // Сохраняем в файл
-    $writer = new Xlsx($spreadsheet);
-    $writer->save('database_export.xlsx');
-}
-
-
 // Проверяем, авторизован ли пользователь
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     // Если пользователь не авторизован, перенаправляем на страницу входа или другую страницу
