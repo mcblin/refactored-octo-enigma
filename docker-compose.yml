@@ -1,0 +1,30 @@
+version: '4.29.0'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: my_database
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin  # Задайте свой пароль
+      MYSQL_DATABASE: mysite         # Задайте имя БД
+      MYSQL_USER: admin                 # Имя пользователя для БД
+      MYSQL_PASSWORD: admin       # Пароль пользователя
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: my_phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root                   # Имя пользователя для доступа
+      PMA_PASSWORD: rootpassword       # Пароль для доступа
+      PMA_ARBITRARY: 1                 # Позволяет подключаться к произвольным БД
+
+volumes:
+  db_data:

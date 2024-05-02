@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрываем модальное окно по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Полупрозрачный фон */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Расположение модального окна по центру экрана */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Максимальная ширина модального окна */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    color: white;
+    margin: 0;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px; /* Ограничиваем ширину формы */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: calc(50% - 10px); /* Уменьшаем ширину поля ввода */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+}
+
+/* Стили для кнопок в модальном окне */
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px; /* Добавляем отступы между кнопками */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для списка в модальном окне */
+#foodList {
+    margin-bottom: 20px; /* Добавляем нижний отступ для разделения от кнопок */
+}
+
+#foodList ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+#foodList li {
+    margin-bottom: 5px; /* Добавляем отступ между элементами списка */
+    border-bottom: 1px solid #ddd; /* Добавляем разделительную линию */
+    padding-bottom: 5px; /* Добавляем отступ снизу для разделительной линии */
+}   
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center; /* Центрируем текст внутри футера */
+}
+
+.footer-container {
+    display: block; /* Изменяем на блочный элемент */
+}
+
+.footer-container p {
+    margin: 0 auto; /* Устанавливаем отступы по бокам автоматически для центрирования */
+    display: inline-block; /* Делаем блоки инлайновыми, чтобы их можно было выровнять по центру */
+}
+
+.footer-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
